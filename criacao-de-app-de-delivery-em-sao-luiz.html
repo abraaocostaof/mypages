@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>criação de app de delivery em São Luiz | Especialista Abraão Araújo</title>
+    <meta name="description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta name="keywords" content="criação de app de delivery, São Luiz, Abraão Araújo, serviços, especialista">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="criação de app de delivery em São Luiz | Especialista Abraão Araújo">
+    <meta property="og:description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portifolio.abraaocosta.com.br">
+    
+    <style>
+        /* Variáveis e Reset */
+        :root {
+            --primary: #0f172a;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); line-height: 1.7; color: var(--dark); background-color: var(--light); }
+        
+        /* Tipografia */
+        h1, h2, h3 { color: var(--primary); margin-bottom: 1rem; line-height: 1.2; font-weight: 700; }
+        h1 { font-size: 2.5rem; text-align: center; margin: 2rem 0; letter-spacing: -0.02em; }
+        h2 { font-size: 2rem; margin-top: 3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; margin-top: 1.5rem; }
+        p { margin-bottom: 1.2rem; font-size: 1.1rem; color: #334155; }
+        a { color: var(--secondary); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #059669; }
+        
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+        
+        /* Navegação */
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav a { font-weight: 500; color: var(--gray); }
+        nav a:hover { color: var(--primary); }
+        
+        /* Main Content */
+        main { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); margin: 2rem auto; max-width: 900px; }
+        
+        /* Breadcrumbs */
+        .breadcrumbs { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+        .breadcrumbs a { color: var(--gray); }
+        
+        /* Vídeo */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 2.5rem 0; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        /* Listas e Benefícios */
+        .benefits-list { list-style: none; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        .benefits-list li { background: var(--light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .benefits-list li strong { display: block; color: var(--primary); margin-bottom: 0.5rem; }
+        
+        /* FAQ */
+        details { background: #fff; padding: 1.2rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        details[open] { border-color: var(--secondary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        summary { font-weight: 600; cursor: pointer; color: var(--primary); font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--secondary); transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        details p { margin-top: 1rem; margin-bottom: 0; color: #475569; }
+        
+        /* CTA */
+        .cta-box { background: var(--primary); color: #fff; padding: 3rem 2rem; text-align: center; border-radius: 12px; margin: 4rem 0; }
+        .cta-box h2 { color: #fff; border: none; margin-top: 0; font-size: 2.2rem; }
+        .cta-box p { color: #cbd5e1; font-size: 1.2rem; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: var(--secondary); color: #fff; padding: 1rem 2.5rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.05em; }
+        .btn:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3); color: #fff; }
+        
+        /* Autor (E-E-A-T) */
+        .author-section { display: flex; gap: 2rem; background: var(--light); padding: 2.5rem; border-radius: 12px; margin-top: 4rem; align-items: flex-start; border: 1px solid #e2e8f0; }
+        .author-info h3 { margin-top: 0; font-size: 1.8rem; }
+        .experience-badge { display: inline-block; background: var(--primary); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600; }
+        
+        /* Footer */
+        footer { background: var(--primary); color: #f8fafc; padding: 4rem 0 2rem; margin-top: 5rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .footer-col h4 { color: #fff; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; color: #94a3b8; }
+        .footer-col a { color: #94a3b8; }
+        .footer-col a:hover { color: var(--secondary); }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 3rem; border-top: 1px solid #334155; font-size: 0.9rem; color: #64748b; }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2rem; }
+            .author-section { flex-direction: column; text-align: center; align-items: center; }
+            main { padding: 1.5rem; margin: 1rem; }
+            .cta-box { padding: 2rem 1rem; }
+        }
+    </style>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "criação de app de delivery em São Luiz | Especialista Abraão Araújo",
+  "description": "Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.",
+  "author": {
+    "@type": "Person",
+    "name": "Abraão Araújo",
+    "url": "https://portifolio.abraaocosta.com.br"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva a criação de app de delivery em São Luiz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O prazo médio para o desenvolvimento e publicação nas lojas (Google Play e App Store) varia entre 30 a 60 dias, dependendo da complexidade das funcionalidades e integrações solicitadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O aplicativo terá integração com sistema de PDV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, realizamos a integração com os principais sistemas de gestão (PDV) utilizados pelos comércios de São Luiz, garantindo que os pedidos do app caiam direto na sua impressora térmica ou tela de preparo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o pagamento dos pedidos pelo app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Configuramos um checkout transparente onde o cliente pode pagar via Pix, Cartão de Crédito ou selecionar a opção de pagamento na entrega. Os valores caem diretamente na sua conta bancária configurada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês dão suporte após o lançamento do aplicativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Com certeza. Oferecemos planos de manutenção mensal que incluem atualizações de segurança, backups, melhorias contínuas e suporte técnico prioritário para garantir que sua operação em São Luiz nunca pare."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "É possível limitar o raio de entrega por bairro em São Luís?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, você tem total controle geográfico. Pode definir raios de entrega específicos (ex: 5km a partir do Cohafuma) ou selecionar bairros específicos de São Luiz onde deseja atuar, com taxas de entrega diferenciadas para cada zona."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://portifolio.abraaocosta.com.br/wp-content/uploads/2024/03/abraao-costa-logo-ac-agencia-digital.webp" alt="Abraão Araújo Logo" style="max-height: 40px; display: block;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/categorias/">Categorias</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/fws-story/">FWS Story</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/glossario/">Glossário</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/blog/">Blog</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/contato/">Contato</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/sobre-nos/">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumbs">
+            <a href="/">Início</a> > <span>criação de app de delivery</span>
+        </div>
+
+        <article>
+            <h1>criação de app de delivery em São Luiz</h1>
+            
+            <img src="https://picsum.photos/seed/cria%C3%A7%C3%A3o%20de%20app%20de%20delivery/1200/600" alt="criação de app de delivery" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; object-fit: cover; aspect-ratio: 2/1;" loading="lazy" />
+            
+            <div class="intro">
+                <p><strong>Se você é proprietário de um restaurante, farmácia ou pet shop e busca a criação de app de delivery em São Luiz, você está no lugar certo para transformar sua operação digital. No dinâmico mercado da capital maranhense, depender exclusivamente de plataformas de terceiros com taxas abusivas pode asfixiar sua lucratividade. Nossa solução de desenvolvimento de aplicativos personalizados é projetada especificamente para as necessidades da Ilha do Amor, permitindo que você tenha controle total sobre seus pedidos, dados de clientes e logística de entrega, garantindo uma experiência superior do Renascença à Cidade Operária.
+
+A economia digital em São Luiz cresce a passos largos, e a criação de app de delivery tornou-se o divisor de águas entre empresas que escalam e as que ficam para trás. Com nossa expertise técnica e profundo conhecimento do comportamento do consumidor local, entregamos uma ferramenta robusta, intuitiva e otimizada para converter usuários casuais em clientes fiéis. Não somos apenas desenvolvedores; somos seus parceiros estratégicos na jornada de digitalização do seu comércio em São Luís, oferecendo tecnologia de ponta com suporte local e especializado.</strong></p>
+            </div>
+
+            
+
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FXJKoYoRdds?rel=0" title="Vídeo sobre criação de app de delivery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            
+
+            
+            <section>
+                <h2>Por que a Criação de App de Delivery em São Luiz é Essencial para seu Negócio?</h2>
+                <p>A dinâmica urbana de São Luiz, com seus desafios de mobilidade e a expansão de bairros como Cohama, Calhau e Turu, exige que as empresas locais ofereçam conveniência extrema. Ao investir na criação de app de delivery em São Luiz, você elimina intermediários que consomem até 30% do seu faturamento em comissões. Imagine converter cada pedido feito pelo WhatsApp ou plataformas de terceiros em uma transação dentro de sua própria plataforma, onde o ticket médio tende a ser maior devido às estratégias de upselling integradas.</p><p></p><p>Além da economia direta, um aplicativo próprio oferece autonomia total na gestão de áreas de entrega. Você pode definir zonas de atendimento prioritárias para bairros como Ponta d'Areia ou planejar rotas otimizadas que cruzam a Ponte José Sarney com mais eficiência. Ter um app personalizado significa que sua marca estará literalmente na palma da mão do seu cliente maranhense, enviando notificações push sobre promoções de Arroz de Cuxá ou combos especiais de final de semana, aumentando drasticamente a retenção.</p>
+                
+            </section>
+            
+            <section>
+                <h2>Funcionalidades Premium do seu Aplicativo de Delivery em São Luís</h2>
+                <p>Nosso processo de criação de app de delivery em São Luiz foca no que há de mais moderno em UX/UI Design. O aplicativo conta com: \n- Painel Administrativo Intuitivo: Gerencie produtos, preços e estoques em tempo real.\n- Integração com Métodos de Pagamento Locais: Pix, cartões de crédito/débito e carteiras digitais com as menores taxas do mercado.\n- Rastreamento em Tempo Real via GPS: O cliente acompanha o entregador desde a saída do estabelecimento até a chegada em sua residência.\n- Sistema de Cupons e Fidelidade: Crie campanhas específicas para datas festivas de São Luiz, como o São João ou o aniversário da cidade.\n- Notificações Geofencing: Envie alertas quando o cliente estiver próximo ao seu ponto físico no Shopping da Ilha ou no São Luís Shopping, incentivando a retirada no local.</p>
+                
+            </section>
+            
+            <section>
+                <h2>E-E-A-T: Especialidade e Autoridade em Desenvolvimento Mobile no Maranhão</h2>
+                <p>Nossa autoridade na criação de app de delivery em São Luiz é sustentada por anos de experiência no ecossistema tecnológico maranhense. Diferente de agências genéricas, nós compreendemos a infraestrutura local de internet e as preferências de consumo da população ludovicense. Nossa equipe é composta por desenvolvedores seniores especializados em frameworks como Flutter e React Native, garantindo que seu aplicativo seja leve, rápido e funcione perfeitamente tanto em iPhones quanto em dispositivos Android de entrada.\n\nA confiabilidade é o nosso pilar. Oferecemos suporte técnico local, treinamento para sua equipe e consultoria de marketing para o lançamento do app. Quando você escolhe nossa solução, está optando por uma empresa que possui um portfólio comprovado de sucesso em São Luiz, ajudando desde pequenas hamburguerias artesanais até grandes redes de distribuição a dominarem o mercado digital local com segurança jurídica e conformidade com a LGPD.</p>
+                
+            </section>
+            
+            <section>
+                <h2>Estratégias de SEO Local e Crescimento em São Luís</h2>
+                <p>Não basta apenas criar o aplicativo; é preciso que ele seja encontrado. Integrada à criação de app de delivery em São Luiz, aplicamos técnicas de App Store Optimization (ASO) e SEO local para garantir que, quando alguém buscar por 'entrega de comida em São Luís' ou 'melhor delivery perto de mim', sua marca apareça no topo. Utilizamos dados geográficos para otimizar sua presença no Google Meu Negócio, conectando seu cardápio digital diretamente às buscas orgânicas dos usuários que transitam pela Avenida Litorânea ou pelo Centro Histórico.\n\nAcreditamos que a tecnologia deve servir ao negócio. Por isso, implementamos ferramentas de análise de dados (Analytics) que mostram exatamente de quais bairros de São Luiz vêm seus pedidos, quais horários têm maior demanda e qual o perfil do seu consumidor. Esse nível de inteligência de mercado é o que diferencia os líderes do setor em nossa capital.</p>
+                
+            </section>
+            
+
+            <section>
+                <h2>Principais Benefícios</h2>
+                <ul class="benefits-list">
+                    
+                    <li>
+                        <strong>Independência de Marketplace</strong>
+                        Livre-se das taxas de até 30% cobradas por grandes apps nacionais e aumente sua margem de lucro imediata.
+                    </li>
+                    <li>
+                        <strong>Fidelização de Clientes em SLZ</strong>
+                        Crie programas de pontos exclusivos para o público de São Luiz, incentivando a recorrência de compras.
+                    </li>
+                    <li>
+                        <strong>Suporte Técnico Regional</strong>
+                        Atendimento rápido e no seu fuso horário, com especialistas que conhecem a realidade do comércio maranhense.
+                    </li>
+                    <li>
+                        <strong>Dados e Inteligência</strong>
+                        Tenha acesso aos dados de contato dos seus clientes para realizar campanhas de remarketing via e-mail e WhatsApp.
+                    </li>
+                    <li>
+                        <strong>Escalabilidade Logística</strong>
+                        Gerencie sua própria frota de motoboys ou integre-se com serviços de logística locais de forma automatizada.
+                    </li>
+                </ul>
+            </section>
+
+            
+
+            
+            <section id="avaliacoes" style="margin: 4rem 0; text-align: center; background: var(--light); padding: 3rem 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h2>O que nossos clientes dizem</h2>
+                <p style="margin-bottom: 2rem;">Confira nossas últimas atualizações e avaliações de clientes no Google Meu Negócio.</p>
+                <a href="https://share.google/ZyFWQZKYi3gcbRsg6" target="_blank" rel="noopener noreferrer" class="btn" style="background: #4285F4;">Ver Avaliações no Google</a>
+            </section>
+            
+
+            <div class="cta-box">
+                <h2>Pronto para começar?</h2>
+                <p>Entre em contato agora mesmo e descubra como posso ajudar você com criação de app de delivery.</p>
+                <a href="https://wa.me/5598983233310?text=Olá! Gostaria de saber mais sobre cria%C3%A7%C3%A3o%20de%20app%20de%20delivery" class="btn" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            </div>
+
+            <section id="faq">
+                <h2>Perguntas Frequentes (FAQ)</h2>
+                
+                <details>
+                    <summary>Quanto tempo leva a criação de app de delivery em São Luiz?</summary>
+                    <p>O prazo médio para o desenvolvimento e publicação nas lojas (Google Play e App Store) varia entre 30 a 60 dias, dependendo da complexidade das funcionalidades e integrações solicitadas.</p>
+                </details>
+                <details>
+                    <summary>O aplicativo terá integração com sistema de PDV?</summary>
+                    <p>Sim, realizamos a integração com os principais sistemas de gestão (PDV) utilizados pelos comércios de São Luiz, garantindo que os pedidos do app caiam direto na sua impressora térmica ou tela de preparo.</p>
+                </details>
+                <details>
+                    <summary>Como funciona o pagamento dos pedidos pelo app?</summary>
+                    <p>Configuramos um checkout transparente onde o cliente pode pagar via Pix, Cartão de Crédito ou selecionar a opção de pagamento na entrega. Os valores caem diretamente na sua conta bancária configurada.</p>
+                </details>
+                <details>
+                    <summary>Vocês dão suporte após o lançamento do aplicativo?</summary>
+                    <p>Com certeza. Oferecemos planos de manutenção mensal que incluem atualizações de segurança, backups, melhorias contínuas e suporte técnico prioritário para garantir que sua operação em São Luiz nunca pare.</p>
+                </details>
+                <details>
+                    <summary>É possível limitar o raio de entrega por bairro em São Luís?</summary>
+                    <p>Sim, você tem total controle geográfico. Pode definir raios de entrega específicos (ex: 5km a partir do Cohafuma) ou selecionar bairros específicos de São Luiz onde deseja atuar, com taxas de entrega diferenciadas para cada zona.</p>
+                </details>
+            </section>
+        </article>
+
+        <section id="sobre" class="author-section">
+            <div class="author-info">
+                <span class="experience-badge">+5 anos de experiência</span>
+                <h3>Sobre o Autor: Abraão Araújo</h3>
+                <p>Desenvolvedor Full Stack especializado em soluções web e mobile de alta performance.</p>
+                <p><strong>Especialidade:</strong> Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li>Email: <a href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/5598983233310">+5598983233310</a></li>
+                    <li>Site: <a href="https://portifolio.abraaocosta.com.br">https://portifolio.abraaocosta.com.br</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/abraao.araujo.9400" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://x.com/abraaocostaof" target="_blank" rel="noopener noreferrer">X</a></li>
+                    <li><a href="https://www.youtube.com/@abraaocostaoficial/videos" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    <li><a href="https://www.linkedin.com/in/abra%C3%A3o-ara%C3%BAjo-rei-dos-aplicativos-06b858a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/abraaocostaof/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-aplicativos/">Criação de Aplicativos</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/redes-sociais-branding-digital/">Redes Sociais & Branding</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-sites/">Criação de Sites</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/marketing-digital-trafego-pago/">Marketing Digital & Tráfego Pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-cookies/">Política de Cookies</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-privacidade/">Política de Privacidade</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/termos-de-uso/">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Abraão Araújo. Todos os direitos reservados.</p>
+            <p><small>Página otimizada para SEO e conformidade com Google AdSense.</small></p>
+        </div>
+    </footer>
+</body>
+</html>

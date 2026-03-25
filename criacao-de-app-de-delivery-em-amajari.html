@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>criação de app de delivery em Amajari | Especialista Abraão Araújo</title>
+    <meta name="description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta name="keywords" content="criação de app de delivery, Amajari, Abraão Araújo, serviços, especialista">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="criação de app de delivery em Amajari | Especialista Abraão Araújo">
+    <meta property="og:description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portifolio.abraaocosta.com.br">
+    
+    <style>
+        /* Variáveis e Reset */
+        :root {
+            --primary: #0f172a;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); line-height: 1.7; color: var(--dark); background-color: var(--light); }
+        
+        /* Tipografia */
+        h1, h2, h3 { color: var(--primary); margin-bottom: 1rem; line-height: 1.2; font-weight: 700; }
+        h1 { font-size: 2.5rem; text-align: center; margin: 2rem 0; letter-spacing: -0.02em; }
+        h2 { font-size: 2rem; margin-top: 3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; margin-top: 1.5rem; }
+        p { margin-bottom: 1.2rem; font-size: 1.1rem; color: #334155; }
+        a { color: var(--secondary); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #059669; }
+        
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+        
+        /* Navegação */
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav a { font-weight: 500; color: var(--gray); }
+        nav a:hover { color: var(--primary); }
+        
+        /* Main Content */
+        main { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); margin: 2rem auto; max-width: 900px; }
+        
+        /* Breadcrumbs */
+        .breadcrumbs { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+        .breadcrumbs a { color: var(--gray); }
+        
+        /* Vídeo */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 2.5rem 0; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        /* Listas e Benefícios */
+        .benefits-list { list-style: none; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        .benefits-list li { background: var(--light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .benefits-list li strong { display: block; color: var(--primary); margin-bottom: 0.5rem; }
+        
+        /* FAQ */
+        details { background: #fff; padding: 1.2rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        details[open] { border-color: var(--secondary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        summary { font-weight: 600; cursor: pointer; color: var(--primary); font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--secondary); transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        details p { margin-top: 1rem; margin-bottom: 0; color: #475569; }
+        
+        /* CTA */
+        .cta-box { background: var(--primary); color: #fff; padding: 3rem 2rem; text-align: center; border-radius: 12px; margin: 4rem 0; }
+        .cta-box h2 { color: #fff; border: none; margin-top: 0; font-size: 2.2rem; }
+        .cta-box p { color: #cbd5e1; font-size: 1.2rem; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: var(--secondary); color: #fff; padding: 1rem 2.5rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.05em; }
+        .btn:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3); color: #fff; }
+        
+        /* Autor (E-E-A-T) */
+        .author-section { display: flex; gap: 2rem; background: var(--light); padding: 2.5rem; border-radius: 12px; margin-top: 4rem; align-items: flex-start; border: 1px solid #e2e8f0; }
+        .author-info h3 { margin-top: 0; font-size: 1.8rem; }
+        .experience-badge { display: inline-block; background: var(--primary); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600; }
+        
+        /* Footer */
+        footer { background: var(--primary); color: #f8fafc; padding: 4rem 0 2rem; margin-top: 5rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .footer-col h4 { color: #fff; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; color: #94a3b8; }
+        .footer-col a { color: #94a3b8; }
+        .footer-col a:hover { color: var(--secondary); }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 3rem; border-top: 1px solid #334155; font-size: 0.9rem; color: #64748b; }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2rem; }
+            .author-section { flex-direction: column; text-align: center; align-items: center; }
+            main { padding: 1.5rem; margin: 1rem; }
+            .cta-box { padding: 2rem 1rem; }
+        }
+    </style>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "criação de app de delivery em Amajari | Especialista Abraão Araújo",
+  "description": "Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.",
+  "author": {
+    "@type": "Person",
+    "name": "Abraão Araújo",
+    "url": "https://portifolio.abraaocosta.com.br"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto tempo demora para criar um app de delivery em Amajari?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O prazo médio de desenvolvimento e publicação nas lojas (Google Play e App Store) varia entre 30 a 45 dias, dependendo do nível de personalização e integrações solicitadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O aplicativo funciona sem internet estável?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Embora a finalização do pedido exija conexão, o app é otimizado para carregar o cardápio e informações básicas de forma leve, funcionando bem mesmo em redes 3G comuns em algumas áreas de Amajari."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como recebo os pagamentos das vendas pelo app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Os pagamentos via Pix e cartão são creditados diretamente na sua conta bancária vinculada ao gateway de pagamento escolhido, com total transparência e baixas taxas de intermediação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso ter conhecimentos técnicos para gerenciar o aplicativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Fornecemos um treinamento completo e um painel administrativo extremamente simples, onde qualquer pessoa da sua equipe pode atualizar preços, fotos e gerenciar pedidos sem dificuldade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O app de delivery em Amajari serve para outros tipos de comércio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim! Além de restaurantes e lanchonetes, nossa solução é adaptável para farmácias, mercados, distribuidoras de bebidas e qualquer comércio em Amajari que realize entregas domiciliares."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://portifolio.abraaocosta.com.br/wp-content/uploads/2024/03/abraao-costa-logo-ac-agencia-digital.webp" alt="Abraão Araújo Logo" style="max-height: 40px; display: block;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/categorias/">Categorias</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/fws-story/">FWS Story</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/glossario/">Glossário</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/blog/">Blog</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/contato/">Contato</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/sobre-nos/">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumbs">
+            <a href="/">Início</a> > <span>criação de app de delivery</span>
+        </div>
+
+        <article>
+            <h1>criação de app de delivery em Amajari</h1>
+            
+            <img src="https://picsum.photos/seed/cria%C3%A7%C3%A3o%20de%20app%20de%20delivery/1200/600" alt="criação de app de delivery" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; object-fit: cover; aspect-ratio: 2/1;" loading="lazy" />
+            
+            <div class="intro">
+                <p><strong>A expansão digital chegou com força ao norte de Roraima, e a criação de app de delivery em Amajari tornou-se o passo fundamental para qualquer restaurante ou comércio que deseja prosperar na economia atual. Se você é proprietário de um estabelecimento na Vila Brasil, no Tepequém ou no centro administrativo de Amajari, sabe que a dependência de plataformas de terceiros pode corroer sua margem de lucro com taxas abusivas. Desenvolvemos soluções tecnológicas robustas e personalizadas, garantindo que seu negócio tenha uma vitrine digital exclusiva e eficiente.
+
+Nossa expertise em desenvolvimento de software focado no mercado roraimense permite entregar aplicativos que não apenas funcionam, mas convertem curiosos em clientes fiéis. Ao optar pela nossa consultoria em criação de app de delivery em Amajari, você investe em uma ferramenta otimizada para a logística local, considerando as particularidades geográficas da nossa região e o comportamento de consumo específico do público de Amajari.</strong></p>
+            </div>
+
+            
+
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FXJKoYoRdds?rel=0" title="Vídeo sobre criação de app de delivery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            
+
+            
+            <section>
+                <h2>A Importância de um Aplicativo de Delivery Próprio em Amajari</h2>
+                <p>Amajari vive um momento de crescimento único, impulsionado pelo turismo na Serra do Tepequém e pelo fortalecimento do agronegócio regional. Nesse cenário, depender apenas de redes sociais ou WhatsApp para receber pedidos é limitar o potencial do seu negócio. A criação de app de delivery em Amajari permite a automação de processos, reduzindo erros humanos e agilizando o tempo de entrega, algo crucial para manter a temperatura e a qualidade dos alimentos.</p><p></p><p>Além disso, ter um aplicativo exclusivo coloca sua marca em destaque. Enquanto em marketplaces você é apenas mais um na lista, em seu próprio app, o cliente interage apenas com o seu cardápio. Isso aumenta o 'share of mind' e permite estratégias de marketing direto, como notificações push para promoções em dias de maior movimento na cidade, garantindo que seu estabelecimento seja a primeira opção na mente do consumidor local.</p>
+                
+            </section>
+            
+            <section>
+                <h2>Funcionalidades Sob Medida para o Comércio de Amajari</h2>
+                <p>Não entregamos apenas um código; entregamos uma máquina de vendas. Nossos aplicativos são desenvolvidos com tecnologias de ponta, incluindo geolocalização precisa para facilitar a logística de entrega em bairros mais afastados e vilas de Amajari. Integramos sistemas de pagamentos locais (Pix, cartões e dinheiro) com total segurança para você e seu cliente.</p><p></p><p>As principais funcionalidades incluem: cardápio digital interativo com fotos em alta resolução, sistema de cupons de desconto, programa de fidelidade integrado para recompensar os moradores de Amajari que compram com frequência, e um painel administrativo intuitivo onde você pode gerenciar estoques e pedidos em tempo real. Tudo isso com uma interface UX/UI (Experiência do Usuário) pensada para ser simples, permitindo que pessoas de todas as idades façam pedidos sem dificuldades, seja do celular ou de um tablet.</p>
+                
+            </section>
+            
+            <section>
+                <h2>E-E-A-T: Por que somos a autoridade em Delivery no Roraima</h2>
+                <p>Com anos de experiência em desenvolvimento de software e marketing digital focado em SEO Local, nossa equipe entende os desafios logísticos e tecnológicos do interior de Roraima. A criação de app de delivery em Amajari exige mais do que design; exige conhecimento técnico sobre estabilidade de servidores e economia de dados móveis, já que sabemos que a conectividade pode variar na região.</p><p></p><p>Nossa autoridade é construída através de casos de sucesso reais e um suporte técnico humanizado que fala a língua do empreendedor de Amajari. Não somos uma empresa de software genérica; somos parceiros estratégicos que acompanham desde o planejamento até o lançamento e manutenção do seu aplicativo, garantindo que ele esteja sempre atualizado com as últimas diretrizes de segurança e performance do Google e da Apple Store.</p>
+                
+            </section>
+            
+            <section>
+                <h2>Impacto da Logística Local no Desenvolvimento do App</h2>
+                <p>Desenvolver um aplicativo para Amajari requer entender que a logística para quem está próximo à prefeitura é diferente de quem atende turistas no Tepequém. Por isso, implementamos zonas de entrega inteligentes com taxas dinâmicas. Isso permite que você expanda seu raio de atuação sem comprometer seus custos operacionais. A criação de app de delivery em Amajari sob nossa supervisão garante que cada detalhe, desde o cálculo do frete até o tempo estimado de preparo, seja configurado de acordo com a realidade do seu trânsito e da sua equipe de entregadores.</p>
+                
+            </section>
+            
+
+            <section>
+                <h2>Principais Benefícios</h2>
+                <ul class="benefits-list">
+                    
+                    <li>
+                        <strong>Taxa Zero de Comissão</strong>
+                        Diferente de apps nacionais, você não paga porcentagem por cada pedido. O lucro das suas vendas em Amajari é 100% seu.
+                    </li>
+                    <li>
+                        <strong>Controle Total de Dados</strong>
+                        Tenha acesso ao banco de dados dos seus clientes para realizar campanhas de remarketing personalizadas via e-mail ou SMS.
+                    </li>
+                    <li>
+                        <strong>Fortalecimento da Marca</strong>
+                        Sua logomarca na tela inicial dos celulares dos clientes em Amajari, aumentando a autoridade do seu negócio.
+                    </li>
+                    <li>
+                        <strong>Independência Tecnológica</strong>
+                        Não fique à mercê de mudanças de algoritmos de terceiros. Sua plataforma, suas regras, seu crescimento.
+                    </li>
+                    <li>
+                        <strong>Suporte Local Especializado</strong>
+                        Atendimento rápido e em português, focado em resolver problemas específicos de quem opera em Amajari e região.
+                    </li>
+                </ul>
+            </section>
+
+            
+
+            
+            <section id="avaliacoes" style="margin: 4rem 0; text-align: center; background: var(--light); padding: 3rem 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h2>O que nossos clientes dizem</h2>
+                <p style="margin-bottom: 2rem;">Confira nossas últimas atualizações e avaliações de clientes no Google Meu Negócio.</p>
+                <a href="https://share.google/ZyFWQZKYi3gcbRsg6" target="_blank" rel="noopener noreferrer" class="btn" style="background: #4285F4;">Ver Avaliações no Google</a>
+            </section>
+            
+
+            <div class="cta-box">
+                <h2>Pronto para começar?</h2>
+                <p>Entre em contato agora mesmo e descubra como posso ajudar você com criação de app de delivery.</p>
+                <a href="https://wa.me/5598983233310?text=Olá! Gostaria de saber mais sobre cria%C3%A7%C3%A3o%20de%20app%20de%20delivery" class="btn" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            </div>
+
+            <section id="faq">
+                <h2>Perguntas Frequentes (FAQ)</h2>
+                
+                <details>
+                    <summary>Quanto tempo demora para criar um app de delivery em Amajari?</summary>
+                    <p>O prazo médio de desenvolvimento e publicação nas lojas (Google Play e App Store) varia entre 30 a 45 dias, dependendo do nível de personalização e integrações solicitadas.</p>
+                </details>
+                <details>
+                    <summary>O aplicativo funciona sem internet estável?</summary>
+                    <p>Embora a finalização do pedido exija conexão, o app é otimizado para carregar o cardápio e informações básicas de forma leve, funcionando bem mesmo em redes 3G comuns em algumas áreas de Amajari.</p>
+                </details>
+                <details>
+                    <summary>Como recebo os pagamentos das vendas pelo app?</summary>
+                    <p>Os pagamentos via Pix e cartão são creditados diretamente na sua conta bancária vinculada ao gateway de pagamento escolhido, com total transparência e baixas taxas de intermediação.</p>
+                </details>
+                <details>
+                    <summary>Preciso ter conhecimentos técnicos para gerenciar o aplicativo?</summary>
+                    <p>Não. Fornecemos um treinamento completo e um painel administrativo extremamente simples, onde qualquer pessoa da sua equipe pode atualizar preços, fotos e gerenciar pedidos sem dificuldade.</p>
+                </details>
+                <details>
+                    <summary>O app de delivery em Amajari serve para outros tipos de comércio?</summary>
+                    <p>Sim! Além de restaurantes e lanchonetes, nossa solução é adaptável para farmácias, mercados, distribuidoras de bebidas e qualquer comércio em Amajari que realize entregas domiciliares.</p>
+                </details>
+            </section>
+        </article>
+
+        <section id="sobre" class="author-section">
+            <div class="author-info">
+                <span class="experience-badge">+5 anos de experiência</span>
+                <h3>Sobre o Autor: Abraão Araújo</h3>
+                <p>Desenvolvedor Full Stack especializado em soluções web e mobile de alta performance.</p>
+                <p><strong>Especialidade:</strong> Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li>Email: <a href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/5598983233310">+5598983233310</a></li>
+                    <li>Site: <a href="https://portifolio.abraaocosta.com.br">https://portifolio.abraaocosta.com.br</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/abraao.araujo.9400" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://x.com/abraaocostaof" target="_blank" rel="noopener noreferrer">X</a></li>
+                    <li><a href="https://www.youtube.com/@abraaocostaoficial/videos" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    <li><a href="https://www.linkedin.com/in/abra%C3%A3o-ara%C3%BAjo-rei-dos-aplicativos-06b858a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/abraaocostaof/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-aplicativos/">Criação de Aplicativos</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/redes-sociais-branding-digital/">Redes Sociais & Branding</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-sites/">Criação de Sites</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/marketing-digital-trafego-pago/">Marketing Digital & Tráfego Pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-cookies/">Política de Cookies</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-privacidade/">Política de Privacidade</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/termos-de-uso/">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Abraão Araújo. Todos os direitos reservados.</p>
+            <p><small>Página otimizada para SEO e conformidade com Google AdSense.</small></p>
+        </div>
+    </footer>
+</body>
+</html>

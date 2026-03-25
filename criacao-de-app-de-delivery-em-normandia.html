@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>criação de app de delivery em Normandia | Especialista Abraão Araújo</title>
+    <meta name="description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta name="keywords" content="criação de app de delivery, Normandia, Abraão Araújo, serviços, especialista">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="criação de app de delivery em Normandia | Especialista Abraão Araújo">
+    <meta property="og:description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portifolio.abraaocosta.com.br">
+    
+    <style>
+        /* Variáveis e Reset */
+        :root {
+            --primary: #0f172a;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); line-height: 1.7; color: var(--dark); background-color: var(--light); }
+        
+        /* Tipografia */
+        h1, h2, h3 { color: var(--primary); margin-bottom: 1rem; line-height: 1.2; font-weight: 700; }
+        h1 { font-size: 2.5rem; text-align: center; margin: 2rem 0; letter-spacing: -0.02em; }
+        h2 { font-size: 2rem; margin-top: 3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; margin-top: 1.5rem; }
+        p { margin-bottom: 1.2rem; font-size: 1.1rem; color: #334155; }
+        a { color: var(--secondary); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #059669; }
+        
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+        
+        /* Navegação */
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav a { font-weight: 500; color: var(--gray); }
+        nav a:hover { color: var(--primary); }
+        
+        /* Main Content */
+        main { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); margin: 2rem auto; max-width: 900px; }
+        
+        /* Breadcrumbs */
+        .breadcrumbs { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+        .breadcrumbs a { color: var(--gray); }
+        
+        /* Vídeo */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 2.5rem 0; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        /* Listas e Benefícios */
+        .benefits-list { list-style: none; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        .benefits-list li { background: var(--light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .benefits-list li strong { display: block; color: var(--primary); margin-bottom: 0.5rem; }
+        
+        /* FAQ */
+        details { background: #fff; padding: 1.2rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        details[open] { border-color: var(--secondary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        summary { font-weight: 600; cursor: pointer; color: var(--primary); font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--secondary); transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        details p { margin-top: 1rem; margin-bottom: 0; color: #475569; }
+        
+        /* CTA */
+        .cta-box { background: var(--primary); color: #fff; padding: 3rem 2rem; text-align: center; border-radius: 12px; margin: 4rem 0; }
+        .cta-box h2 { color: #fff; border: none; margin-top: 0; font-size: 2.2rem; }
+        .cta-box p { color: #cbd5e1; font-size: 1.2rem; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: var(--secondary); color: #fff; padding: 1rem 2.5rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.05em; }
+        .btn:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3); color: #fff; }
+        
+        /* Autor (E-E-A-T) */
+        .author-section { display: flex; gap: 2rem; background: var(--light); padding: 2.5rem; border-radius: 12px; margin-top: 4rem; align-items: flex-start; border: 1px solid #e2e8f0; }
+        .author-info h3 { margin-top: 0; font-size: 1.8rem; }
+        .experience-badge { display: inline-block; background: var(--primary); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600; }
+        
+        /* Footer */
+        footer { background: var(--primary); color: #f8fafc; padding: 4rem 0 2rem; margin-top: 5rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .footer-col h4 { color: #fff; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; color: #94a3b8; }
+        .footer-col a { color: #94a3b8; }
+        .footer-col a:hover { color: var(--secondary); }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 3rem; border-top: 1px solid #334155; font-size: 0.9rem; color: #64748b; }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2rem; }
+            .author-section { flex-direction: column; text-align: center; align-items: center; }
+            main { padding: 1.5rem; margin: 1rem; }
+            .cta-box { padding: 2rem 1rem; }
+        }
+    </style>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "criação de app de delivery em Normandia | Especialista Abraão Araújo",
+  "description": "Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.",
+  "author": {
+    "@type": "Person",
+    "name": "Abraão Araújo",
+    "url": "https://portifolio.abraaocosta.com.br"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva para criar o app de delivery em Normandia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O prazo médio para o desenvolvimento completo, testes e publicação nas lojas (Android e iOS) varia de 30 a 45 dias, dependendo da complexidade das personalizações solicitadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O aplicativo funciona em áreas com internet instável em Roraima?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim! Desenvolvemos nossos aplicativos com tecnologias leves e cache inteligente, garantindo que o cardápio carregue rapidamente mesmo em conexões 3G, comuns em certas áreas de Normandia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Eu mesmo consigo atualizar os preços e produtos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Com certeza. Você receberá acesso a um painel administrativo fácil de usar, onde poderá alterar preços, pausar produtos esgotados e criar promoções em segundos, sem precisar de suporte técnico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O app já vem com sistema de pagamento integrado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, integramos os principais gateways de pagamento do Brasil, permitindo que você aceite Pix com baixa automática e cartões de crédito diretamente pelo aplicativo com segurança total."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são os custos mensais após a criação do app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trabalhamos com um modelo de transparência. Além do valor de criação, existe uma pequena taxa de manutenção e hospedagem para garantir que seu app esteja sempre online, atualizado e seguro."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://portifolio.abraaocosta.com.br/wp-content/uploads/2024/03/abraao-costa-logo-ac-agencia-digital.webp" alt="Abraão Araújo Logo" style="max-height: 40px; display: block;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/categorias/">Categorias</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/fws-story/">FWS Story</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/glossario/">Glossário</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/blog/">Blog</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/contato/">Contato</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/sobre-nos/">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumbs">
+            <a href="/">Início</a> > <span>criação de app de delivery</span>
+        </div>
+
+        <article>
+            <h1>criação de app de delivery em Normandia</h1>
+            
+            <img src="https://picsum.photos/seed/cria%C3%A7%C3%A3o%20de%20app%20de%20delivery/1200/600" alt="criação de app de delivery" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; object-fit: cover; aspect-ratio: 2/1;" loading="lazy" />
+            
+            <div class="intro">
+                <p><strong>Se você é proprietário de um restaurante, lanchonete ou comércio em Normandia e busca escalar suas vendas, a criação de app de delivery em Normandia é o divisor de águas que seu negócio precisa. Em um cenário onde a conveniência dita o comportamento do consumidor, depender apenas de redes sociais ou marketplaces de terceiros limita seu crescimento e corrói suas margens de lucro com taxas abusivas. Nossa solução de desenvolvimento de aplicativos é focada em proporcionar independência digital, oferecendo uma plataforma robusta, rápida e totalmente personalizada para a realidade do mercado de Roraima.\n\nAqui em Normandia, entendemos que o comércio local possui particularidades únicas, desde a logística de entrega no centro até o atendimento aos bairros mais afastados. Por isso, não entregamos apenas um código; entregamos uma ferramenta estratégica de vendas. Ao investir na criação de app de delivery em Normandia conosco, você terá em mãos uma tecnologia de ponta, com interface intuitiva para o usuário e um painel administrativo completo para gerenciar pedidos, estoque e promoções em tempo real, garantindo que sua marca se destaque na palma da mão do seu cliente.</strong></p>
+            </div>
+
+            
+
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FXJKoYoRdds?rel=0" title="Vídeo sobre criação de app de delivery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            
+
+            
+            <section>
+                <h2>Por que a Criação de App de Delivery em Normandia é Essencial para seu Negócio?</h2>
+                <p>A era dos pedidos apenas por telefone ou mensagens desorganizadas no WhatsApp ficou para trás. Em Normandia, o público está cada vez mais conectado e exigente. Ter seu próprio aplicativo de delivery significa profissionalismo e autoridade. Ao optar pela criação de app de delivery em Normandia, você elimina intermediários e passa a ter o controle total da jornada do seu cliente. Diferente de grandes plataformas nacionais que cobram até 30% de comissão por cada pedido, um app próprio permite que esse valor retorne para o seu caixa como lucro líquido.\n\nAlém disso, a personalização permite que o aplicativo reflita a identidade visual da sua marca, criando uma conexão emocional com os moradores de Normandia. Imagine poder enviar uma notificação push com uma promoção relâmpago em uma tarde de calor em Roraima, atingindo centenas de clientes instantaneamente. Essa é a força de ter uma tecnologia dedicada ao seu sucesso local. Nossa expertise técnica garante que o aplicativo seja leve, funcionando perfeitamente mesmo em conexões de internet variáveis, algo comum em nossa região, garantindo que ninguém deixe de comprar por falhas técnicas.</p>
+                
+            </section>
+            
+            <section>
+                <h2>Funcionalidades Exclusivas para o Comércio de Normandia</h2>
+                <p>Nossa abordagem na criação de app de delivery em Normandia foca em funcionalidades que realmente convertem. O sistema inclui: 1. Cardápio Digital Inteligente: Com fotos em alta resolução e descrições otimizadas que despertam o desejo de compra. 2. Gestão de Áreas de Entrega: Configuração de taxas de entrega diferenciadas para cada região de Normandia, permitindo uma logística precisa. 3. Pagamento Integrado: Aceite Pix, cartões de crédito e débito diretamente pelo app com total segurança, facilitando o checkout para o usuário.\n\nOutro diferencial crucial é o Sistema de Fidelidade integrado. Sabemos que em cidades como Normandia, a recorrência é o que mantém o comércio forte. Com nosso app, você pode criar programas de pontos ou cupons de desconto exclusivos para usuários frequentes, incentivando que o cliente sempre escolha o seu estabelecimento em vez da concorrência. O painel administrativo é simplificado, permitindo que até quem não tem intimidade com tecnologia consiga gerenciar o fluxo de pedidos sem estresse.</p>
+                
+            </section>
+            
+            <section>
+                <h2>E-E-A-T: Especialidade e Autoridade no Desenvolvimento Mobile Local</h2>
+                <p>A confiança é a base de qualquer parceria comercial, e quando falamos de tecnologia, isso é ainda mais vital. Nossa equipe possui anos de experiência e especialidade na criação de app de delivery em Normandia e em todo o estado de Roraima. Não somos apenas desenvolvedores; somos consultores de negócios digitais. Entendemos os gargalos logísticos locais e as preferências do consumidor normandiense, o que nos permite configurar o seu aplicativo com as melhores práticas de UX (User Experience) e UI (User Interface) do mercado.\n\nNossa autoridade é construída através de resultados tangíveis. Implementamos protocolos de segurança rigorosos (LGPD) para proteger os dados dos seus clientes e os seus dados financeiros. Ao escolher nossa solução, você está optando por uma empresa que oferece suporte técnico humanizado e próximo. Se você tiver um problema no sábado à noite, nossa equipe estará pronta para ajudar, pois sabemos que o delivery não para e o seu lucro também não pode parar. Essa confiabilidade é o que nos torna a escolha número um para empresários sérios em Normandia.</p>
+                
+            </section>
+            
+            <section>
+                <h2>SEO Local e Visibilidade: Seja Encontrado em Normandia</h2>
+                <p>Não basta ter um aplicativo excelente; as pessoas em Normandia precisam saber que ele existe. Por isso, nosso serviço de criação de app de delivery em Normandia inclui uma consultoria básica de SEO Local. Ajudamos seu estabelecimento a ser encontrado no Google Maps e nas buscas orgânicas quando alguém procurar por 'delivery em Normandia' ou 'comida em Normandia'. Integramos seu app com suas redes sociais e criamos estratégias de lançamento para que o download do aplicativo seja um sucesso desde o primeiro dia.\n\nA visibilidade online é o que alimenta o funil de vendas. Com um aplicativo próprio, você também começa a coletar dados valiosos: quem é seu cliente, o que ele mais gosta de pedir e em quais dias da semana ele mais compra. Esses dados permitem campanhas de marketing ultra-segmentadas, aumentando a eficiência dos seus investimentos em anúncios e garantindo que cada centavo gasto traga um retorno real para o seu comércio em Roraima.</p>
+                
+            </section>
+            
+
+            <section>
+                <h2>Principais Benefícios</h2>
+                <ul class="benefits-list">
+                    
+                    <li>
+                        <strong>Economia de Comissões</strong>
+                        Livre-se das taxas de até 30% cobradas por terceiros. O lucro de cada pedido em Normandia fica inteiramente com você.
+                    </li>
+                    <li>
+                        <strong>Fidelização de Clientes</strong>
+                        Crie programas de pontos e envie notificações push personalizadas para manter os clientes de Normandia sempre ativos.
+                    </li>
+                    <li>
+                        <strong>Independência Digital</strong>
+                        Tenha sua própria plataforma e não fique à mercê de mudanças de algoritmos ou políticas de grandes aplicativos nacionais.
+                    </li>
+                    <li>
+                        <strong>Gestão Simplificada</strong>
+                        Controle pedidos, estoque e financeiro em um único painel intuitivo, otimizando o tempo da sua equipe.
+                    </li>
+                    <li>
+                        <strong>Segurança de Dados</strong>
+                        Aplicativos desenvolvidos com criptografia de ponta para garantir a privacidade e segurança das transações em Normandia.
+                    </li>
+                </ul>
+            </section>
+
+            
+
+            
+            <section id="avaliacoes" style="margin: 4rem 0; text-align: center; background: var(--light); padding: 3rem 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h2>O que nossos clientes dizem</h2>
+                <p style="margin-bottom: 2rem;">Confira nossas últimas atualizações e avaliações de clientes no Google Meu Negócio.</p>
+                <a href="https://share.google/ZyFWQZKYi3gcbRsg6" target="_blank" rel="noopener noreferrer" class="btn" style="background: #4285F4;">Ver Avaliações no Google</a>
+            </section>
+            
+
+            <div class="cta-box">
+                <h2>Pronto para começar?</h2>
+                <p>Entre em contato agora mesmo e descubra como posso ajudar você com criação de app de delivery.</p>
+                <a href="https://wa.me/5598983233310?text=Olá! Gostaria de saber mais sobre cria%C3%A7%C3%A3o%20de%20app%20de%20delivery" class="btn" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            </div>
+
+            <section id="faq">
+                <h2>Perguntas Frequentes (FAQ)</h2>
+                
+                <details>
+                    <summary>Quanto tempo leva para criar o app de delivery em Normandia?</summary>
+                    <p>O prazo médio para o desenvolvimento completo, testes e publicação nas lojas (Android e iOS) varia de 30 a 45 dias, dependendo da complexidade das personalizações solicitadas.</p>
+                </details>
+                <details>
+                    <summary>O aplicativo funciona em áreas com internet instável em Roraima?</summary>
+                    <p>Sim! Desenvolvemos nossos aplicativos com tecnologias leves e cache inteligente, garantindo que o cardápio carregue rapidamente mesmo em conexões 3G, comuns em certas áreas de Normandia.</p>
+                </details>
+                <details>
+                    <summary>Eu mesmo consigo atualizar os preços e produtos?</summary>
+                    <p>Com certeza. Você receberá acesso a um painel administrativo fácil de usar, onde poderá alterar preços, pausar produtos esgotados e criar promoções em segundos, sem precisar de suporte técnico.</p>
+                </details>
+                <details>
+                    <summary>O app já vem com sistema de pagamento integrado?</summary>
+                    <p>Sim, integramos os principais gateways de pagamento do Brasil, permitindo que você aceite Pix com baixa automática e cartões de crédito diretamente pelo aplicativo com segurança total.</p>
+                </details>
+                <details>
+                    <summary>Quais são os custos mensais após a criação do app?</summary>
+                    <p>Trabalhamos com um modelo de transparência. Além do valor de criação, existe uma pequena taxa de manutenção e hospedagem para garantir que seu app esteja sempre online, atualizado e seguro.</p>
+                </details>
+            </section>
+        </article>
+
+        <section id="sobre" class="author-section">
+            <div class="author-info">
+                <span class="experience-badge">+5 anos de experiência</span>
+                <h3>Sobre o Autor: Abraão Araújo</h3>
+                <p>Desenvolvedor Full Stack especializado em soluções web e mobile de alta performance.</p>
+                <p><strong>Especialidade:</strong> Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li>Email: <a href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/5598983233310">+5598983233310</a></li>
+                    <li>Site: <a href="https://portifolio.abraaocosta.com.br">https://portifolio.abraaocosta.com.br</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/abraao.araujo.9400" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://x.com/abraaocostaof" target="_blank" rel="noopener noreferrer">X</a></li>
+                    <li><a href="https://www.youtube.com/@abraaocostaoficial/videos" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    <li><a href="https://www.linkedin.com/in/abra%C3%A3o-ara%C3%BAjo-rei-dos-aplicativos-06b858a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/abraaocostaof/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-aplicativos/">Criação de Aplicativos</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/redes-sociais-branding-digital/">Redes Sociais & Branding</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-sites/">Criação de Sites</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/marketing-digital-trafego-pago/">Marketing Digital & Tráfego Pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-cookies/">Política de Cookies</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-privacidade/">Política de Privacidade</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/termos-de-uso/">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Abraão Araújo. Todos os direitos reservados.</p>
+            <p><small>Página otimizada para SEO e conformidade com Google AdSense.</small></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>criação de app de delivery em Caroebe | Especialista Abraão Araújo</title>
+    <meta name="description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta name="keywords" content="criação de app de delivery, Caroebe, Abraão Araújo, serviços, especialista">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="criação de app de delivery em Caroebe | Especialista Abraão Araújo">
+    <meta property="og:description" content="Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portifolio.abraaocosta.com.br">
+    
+    <style>
+        /* Variáveis e Reset */
+        :root {
+            --primary: #0f172a;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); line-height: 1.7; color: var(--dark); background-color: var(--light); }
+        
+        /* Tipografia */
+        h1, h2, h3 { color: var(--primary); margin-bottom: 1rem; line-height: 1.2; font-weight: 700; }
+        h1 { font-size: 2.5rem; text-align: center; margin: 2rem 0; letter-spacing: -0.02em; }
+        h2 { font-size: 2rem; margin-top: 3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; margin-top: 1.5rem; }
+        p { margin-bottom: 1.2rem; font-size: 1.1rem; color: #334155; }
+        a { color: var(--secondary); text-decoration: none; transition: color 0.3s; }
+        a:hover { color: #059669; }
+        
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+        
+        /* Navegação */
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav a { font-weight: 500; color: var(--gray); }
+        nav a:hover { color: var(--primary); }
+        
+        /* Main Content */
+        main { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); margin: 2rem auto; max-width: 900px; }
+        
+        /* Breadcrumbs */
+        .breadcrumbs { font-size: 0.9rem; color: var(--gray); margin-bottom: 2rem; }
+        .breadcrumbs a { color: var(--gray); }
+        
+        /* Vídeo */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 2.5rem 0; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        /* Listas e Benefícios */
+        .benefits-list { list-style: none; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        .benefits-list li { background: var(--light); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .benefits-list li strong { display: block; color: var(--primary); margin-bottom: 0.5rem; }
+        
+        /* FAQ */
+        details { background: #fff; padding: 1.2rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        details[open] { border-color: var(--secondary); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        summary { font-weight: 600; cursor: pointer; color: var(--primary); font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; font-size: 1.5rem; color: var(--secondary); transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(45deg); }
+        details p { margin-top: 1rem; margin-bottom: 0; color: #475569; }
+        
+        /* CTA */
+        .cta-box { background: var(--primary); color: #fff; padding: 3rem 2rem; text-align: center; border-radius: 12px; margin: 4rem 0; }
+        .cta-box h2 { color: #fff; border: none; margin-top: 0; font-size: 2.2rem; }
+        .cta-box p { color: #cbd5e1; font-size: 1.2rem; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: var(--secondary); color: #fff; padding: 1rem 2.5rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.05em; }
+        .btn:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3); color: #fff; }
+        
+        /* Autor (E-E-A-T) */
+        .author-section { display: flex; gap: 2rem; background: var(--light); padding: 2.5rem; border-radius: 12px; margin-top: 4rem; align-items: flex-start; border: 1px solid #e2e8f0; }
+        .author-info h3 { margin-top: 0; font-size: 1.8rem; }
+        .experience-badge { display: inline-block; background: var(--primary); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600; }
+        
+        /* Footer */
+        footer { background: var(--primary); color: #f8fafc; padding: 4rem 0 2rem; margin-top: 5rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .footer-col h4 { color: #fff; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.8rem; color: #94a3b8; }
+        .footer-col a { color: #94a3b8; }
+        .footer-col a:hover { color: var(--secondary); }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 3rem; border-top: 1px solid #334155; font-size: 0.9rem; color: #64748b; }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2rem; }
+            .author-section { flex-direction: column; text-align: center; align-items: center; }
+            main { padding: 1.5rem; margin: 1rem; }
+            .cta-box { padding: 2rem 1rem; }
+        }
+    </style>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "criação de app de delivery em Caroebe | Especialista Abraão Araújo",
+  "description": "Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.",
+  "author": {
+    "@type": "Person",
+    "name": "Abraão Araújo",
+    "url": "https://portifolio.abraaocosta.com.br"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva a criação de app de delivery em Caroebe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O prazo médio para o desenvolvimento e lançamento de um aplicativo personalizado varia entre 30 a 45 dias, dependendo da complexidade das funcionalidades solicitadas e do tempo de aprovação nas lojas (Google Play e Apple Store)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O aplicativo funciona em celulares mais antigos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim! Utilizamos tecnologias híbridas modernas que garantem que o app seja leve e compatível com a grande maioria dos smartphones utilizados em Caroebe, garantindo que você não perca vendas por limitações técnicas dos clientes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Terei suporte técnico em caso de dúvidas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Com certeza. Oferecemos suporte técnico contínuo e treinamento para você e sua equipe aprenderem a gerenciar os pedidos e atualizar o cardápio ou estoque de forma independente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O app aceita pagamentos online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, integramos o aplicativo com as principais gateways de pagamento (Cartão de Crédito, PIX, Boleto), além de permitir a opção de pagamento na entrega (maquininha ou dinheiro)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso de um servidor caro para manter o app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Nós cuidamos de toda a infraestrutura de hospedagem em nuvem de alta performance, garantindo que seu app esteja sempre online com um custo fixo extremamente acessível para o pequeno empresário de Caroebe."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://portifolio.abraaocosta.com.br/wp-content/uploads/2024/03/abraao-costa-logo-ac-agencia-digital.webp" alt="Abraão Araújo Logo" style="max-height: 40px; display: block;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/categorias/">Categorias</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/fws-story/">FWS Story</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/glossario/">Glossário</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/blog/">Blog</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/contato/">Contato</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/sobre-nos/">Sobre Nós</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumbs">
+            <a href="/">Início</a> > <span>criação de app de delivery</span>
+        </div>
+
+        <article>
+            <h1>criação de app de delivery em Caroebe</h1>
+            
+            <img src="https://picsum.photos/seed/cria%C3%A7%C3%A3o%20de%20app%20de%20delivery/1200/600" alt="criação de app de delivery" style="width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; object-fit: cover; aspect-ratio: 2/1;" loading="lazy" />
+            
+            <div class="intro">
+                <p><strong>Se você busca expandir seu negócio em Caroebe, a criação de app de delivery é o passo fundamental para dominar o mercado local. No cenário atual do sul de Roraima, não basta apenas estar presente nas redes sociais; é preciso oferecer uma experiência de compra fluida, rápida e profissional para seus clientes. Nossa especialidade é transformar o comércio de Caroebe através de tecnologia de ponta, permitindo que restaurantes, farmácias e lojas de conveniência operem com a mesma eficiência das grandes redes nacionais, mas com a identidade e o calor do atendimento local.</strong></p>
+            </div>
+
+            
+
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FXJKoYoRdds?rel=0" title="Vídeo sobre criação de app de delivery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            
+
+            
+            <section>
+                <h2>Por que investir na criação de app de delivery em Caroebe agora?</h2>
+                <p>A economia de Caroebe está em constante evolução e o comportamento do consumidor roraimense mudou drasticamente. Hoje, o cliente prefere a conveniência de pedir um lanche, uma refeição ou produtos básicos sem precisar sair de casa ou enfrentar filas. Ao optar pela criação de app de delivery personalizado, você elimina a dependência de plataformas de terceiros que cobram taxas abusivas e reduzem sua margem de lucro.\n\nTer um aplicativo próprio significa ter controle total sobre seus dados e sua base de clientes. Em uma cidade onde o contato próximo faz a diferença, seu app pode ser personalizado com o nome da sua marca, as cores da sua empresa e promoções exclusivas para os moradores dos bairros locais e da zona rural produtiva. Além disso, a integração com sistemas de pagamento locais e a facilidade de gerenciamento de motoboys tornam a operação logística muito mais simples e lucrativa.</p>
+                
+            </section>
+            
+            <section>
+                <h2>Funcionalidades essenciais para o sucesso do seu App em Caroebe</h2>
+                <p>Para garantir que seu negócio se destaque em Caroebe, desenvolvemos soluções que vão além do básico. Nosso processo de criação de app de delivery foca na experiência do usuário (UX) e na estabilidade técnica. Entre as funcionalidades principais, destacamos: Painel administrativo intuitivo para gestão de pedidos em tempo real; Rastreamento de entregas para que o cliente saiba exatamente onde o pedido está; Sistema de fidelidade integrado para reter o público caroebeense; e Notificações Push para enviar ofertas relâmpago diretamente no celular do cliente.\n\nAcreditamos que a tecnologia deve ser acessível. Por isso, nossos aplicativos são leves, funcionando perfeitamente mesmo em conexões de internet variáveis, algo comum em regiões em crescimento como o interior de Roraima. Trabalhamos com geolocalização precisa para facilitar a entrega em endereços específicos de Caroebe, garantindo que o seu motoboy encontre o destino sem percalços.</p>
+                
+            </section>
+            
+            <section>
+                <h2>E-E-A-T: Nossa Experiência e Autoridade no Mercado de Software</h2>
+                <p>Com anos de experiência no desenvolvimento de sistemas robustos, nossa equipe é formada por especialistas que entendem as particularidades do comércio regional. Não somos apenas uma agência de tecnologia; somos parceiros estratégicos do seu crescimento. Ao escolher nosso serviço de criação de app de delivery, você conta com suporte técnico dedicado e uma consultoria completa sobre como digitalizar seus processos.\n\nA confiabilidade é o nosso pilar. Todos os nossos projetos seguem rigorosos padrões de segurança de dados (LGPD), garantindo que as informações dos seus clientes em Caroebe estejam sempre protegidas. Nossa autoridade é construída através de resultados reais: negócios que dobraram seu faturamento ao sair do WhatsApp informal e profissionalizar suas vendas através de um aplicativo dedicado e otimizado para conversão.</p>
+                
+            </section>
+            
+            <section>
+                <h2>O fim das comissões abusivas e o aumento da sua Lucratividade</h2>
+                <p>Muitos empresários em Caroebe hesitam em entrar no delivery digital por medo das taxas de 27% a 30% cobradas por grandes marketplaces. Nossa proposta é disruptiva: ao investir na criação de app de delivery próprio, você paga um valor justo pelo desenvolvimento e manutenção, mantendo 100% do valor de cada venda no seu bolso. \n\nImagine economizar milhares de reais todos os meses em comissões. Esse capital pode ser reinvestido em marketing local, na melhoria do seu cardápio ou na expansão da sua frota de entrega. Ter seu próprio canal de vendas é o caminho mais rápido para a independência financeira do seu comércio e para a consolidação da sua marca como líder em Caroebe.</p>
+                
+            </section>
+            
+
+            <section>
+                <h2>Principais Benefícios</h2>
+                <ul class="benefits-list">
+                    
+                    <li>
+                        <strong>Zero Comissões por Pedido</strong>
+                        Ao contrário dos grandes apps nacionais, no seu aplicativo próprio todo o lucro das vendas em Caroebe fica com você.
+                    </li>
+                    <li>
+                        <strong>Gestão de Clientes (CRM)</strong>
+                        Tenha acesso aos dados de quem compra, permitindo campanhas de marketing direto via WhatsApp ou e-mail.
+                    </li>
+                    <li>
+                        <strong>Fidelização de Público Local</strong>
+                        Crie programas de pontos e descontos exclusivos para os moradores de Caroebe, aumentando a recorrência.
+                    </li>
+                    <li>
+                        <strong>Interface Personalizada</strong>
+                        Seu app com a cara do seu negócio, fortalecendo sua marca e autoridade no mercado regional de Roraima.
+                    </li>
+                    <li>
+                        <strong>Autonomia Logística</strong>
+                        Gerencie seus próprios entregadores e defina suas taxas de entrega para diferentes regiões da cidade.
+                    </li>
+                </ul>
+            </section>
+
+            
+
+            
+            <section id="avaliacoes" style="margin: 4rem 0; text-align: center; background: var(--light); padding: 3rem 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h2>O que nossos clientes dizem</h2>
+                <p style="margin-bottom: 2rem;">Confira nossas últimas atualizações e avaliações de clientes no Google Meu Negócio.</p>
+                <a href="https://share.google/ZyFWQZKYi3gcbRsg6" target="_blank" rel="noopener noreferrer" class="btn" style="background: #4285F4;">Ver Avaliações no Google</a>
+            </section>
+            
+
+            <div class="cta-box">
+                <h2>Pronto para começar?</h2>
+                <p>Entre em contato agora mesmo e descubra como posso ajudar você com criação de app de delivery.</p>
+                <a href="https://wa.me/5598983233310?text=Olá! Gostaria de saber mais sobre cria%C3%A7%C3%A3o%20de%20app%20de%20delivery" class="btn" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            </div>
+
+            <section id="faq">
+                <h2>Perguntas Frequentes (FAQ)</h2>
+                
+                <details>
+                    <summary>Quanto tempo leva a criação de app de delivery em Caroebe?</summary>
+                    <p>O prazo médio para o desenvolvimento e lançamento de um aplicativo personalizado varia entre 30 a 45 dias, dependendo da complexidade das funcionalidades solicitadas e do tempo de aprovação nas lojas (Google Play e Apple Store).</p>
+                </details>
+                <details>
+                    <summary>O aplicativo funciona em celulares mais antigos?</summary>
+                    <p>Sim! Utilizamos tecnologias híbridas modernas que garantem que o app seja leve e compatível com a grande maioria dos smartphones utilizados em Caroebe, garantindo que você não perca vendas por limitações técnicas dos clientes.</p>
+                </details>
+                <details>
+                    <summary>Terei suporte técnico em caso de dúvidas?</summary>
+                    <p>Com certeza. Oferecemos suporte técnico contínuo e treinamento para você e sua equipe aprenderem a gerenciar os pedidos e atualizar o cardápio ou estoque de forma independente.</p>
+                </details>
+                <details>
+                    <summary>O app aceita pagamentos online?</summary>
+                    <p>Sim, integramos o aplicativo com as principais gateways de pagamento (Cartão de Crédito, PIX, Boleto), além de permitir a opção de pagamento na entrega (maquininha ou dinheiro).</p>
+                </details>
+                <details>
+                    <summary>Preciso de um servidor caro para manter o app?</summary>
+                    <p>Não. Nós cuidamos de toda a infraestrutura de hospedagem em nuvem de alta performance, garantindo que seu app esteja sempre online com um custo fixo extremamente acessível para o pequeno empresário de Caroebe.</p>
+                </details>
+            </section>
+        </article>
+
+        <section id="sobre" class="author-section">
+            <div class="author-info">
+                <span class="experience-badge">+5 anos de experiência</span>
+                <h3>Sobre o Autor: Abraão Araújo</h3>
+                <p>Desenvolvedor Full Stack especializado em soluções web e mobile de alta performance.</p>
+                <p><strong>Especialidade:</strong> Desenvolvimento de aplicativos de delivery personalizados para restaurantes e comércios locais.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li>Email: <a href="mailto:contato@exemplo.com">contato@exemplo.com</a></li>
+                    <li>WhatsApp: <a href="https://wa.me/5598983233310">+5598983233310</a></li>
+                    <li>Site: <a href="https://portifolio.abraaocosta.com.br">https://portifolio.abraaocosta.com.br</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/abraao.araujo.9400" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://x.com/abraaocostaof" target="_blank" rel="noopener noreferrer">X</a></li>
+                    <li><a href="https://www.youtube.com/@abraaocostaoficial/videos" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    <li><a href="https://www.linkedin.com/in/abra%C3%A3o-ara%C3%BAjo-rei-dos-aplicativos-06b858a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/abraaocostaof/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-aplicativos/">Criação de Aplicativos</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/redes-sociais-branding-digital/">Redes Sociais & Branding</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/criacao-de-sites/">Criação de Sites</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/category/marketing-digital-trafego-pago/">Marketing Digital & Tráfego Pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-cookies/">Política de Cookies</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/politica-de-privacidade/">Política de Privacidade</a></li>
+                    <li><a href="https://portifolio.abraaocosta.com.br/termos-de-uso/">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Abraão Araújo. Todos os direitos reservados.</p>
+            <p><small>Página otimizada para SEO e conformidade com Google AdSense.</small></p>
+        </div>
+    </footer>
+</body>
+</html>
